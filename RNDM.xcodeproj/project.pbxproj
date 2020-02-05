@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7090151123E83BF40079E719 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090151023E83BF40079E719 /* Constants.swift */; };
+		7090151323E86F250079E719 /* Thought.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090151223E86F250079E719 /* Thought.swift */; };
 		70B3DD0A23DF87B7008A6EEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B3DD0923DF87B7008A6EEA /* AppDelegate.swift */; };
 		70B3DD0C23DF87B7008A6EEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B3DD0B23DF87B7008A6EEA /* SceneDelegate.swift */; };
 		70B3DD0E23DF87B7008A6EEA /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B3DD0D23DF87B7008A6EEA /* MainVC.swift */; };
@@ -15,6 +16,7 @@
 		70B3DD1323DF87BA008A6EEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70B3DD1223DF87BA008A6EEA /* Assets.xcassets */; };
 		70B3DD1623DF87BA008A6EEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B3DD1423DF87BA008A6EEA /* LaunchScreen.storyboard */; };
 		70B3DD1E23DF8852008A6EEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70B3DD1D23DF8852008A6EEA /* GoogleService-Info.plist */; };
+		70E0E45923EA0EBD000108A2 /* ThoughtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E0E45823EA0EBD000108A2 /* ThoughtCell.swift */; };
 		70EBD58223E571550098292A /* AddToughtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EBD58123E571550098292A /* AddToughtVC.swift */; };
 		DDA420AB06F62FD035364162 /* Pods_RNDM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52427F83C9F02D47D19BF802 /* Pods_RNDM.framework */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,7 @@
 		52427F83C9F02D47D19BF802 /* Pods_RNDM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNDM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		561523551E942788DEFB6B18 /* Pods-RNDM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDM.debug.xcconfig"; path = "Target Support Files/Pods-RNDM/Pods-RNDM.debug.xcconfig"; sourceTree = "<group>"; };
 		7090151023E83BF40079E719 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7090151223E86F250079E719 /* Thought.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thought.swift; sourceTree = "<group>"; };
 		70B3DD0623DF87B7008A6EEA /* RNDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B3DD0923DF87B7008A6EEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70B3DD0B23DF87B7008A6EEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +36,7 @@
 		70B3DD1523DF87BA008A6EEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70B3DD1723DF87BA008A6EEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70B3DD1D23DF8852008A6EEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		70E0E45823EA0EBD000108A2 /* ThoughtCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtCell.swift; sourceTree = "<group>"; };
 		70EBD58123E571550098292A /* AddToughtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToughtVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +108,7 @@
 		70EBD58023E5710F0098292A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				70E0E45823EA0EBD000108A2 /* ThoughtCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 		70EBD58423E5716E0098292A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7090151223E86F250079E719 /* Thought.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,7 +257,9 @@
 				7090151123E83BF40079E719 /* Constants.swift in Sources */,
 				70B3DD0E23DF87B7008A6EEA /* MainVC.swift in Sources */,
 				70EBD58223E571550098292A /* AddToughtVC.swift in Sources */,
+				7090151323E86F250079E719 /* Thought.swift in Sources */,
 				70B3DD0A23DF87B7008A6EEA /* AppDelegate.swift in Sources */,
+				70E0E45923EA0EBD000108A2 /* ThoughtCell.swift in Sources */,
 				70B3DD0C23DF87B7008A6EEA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
