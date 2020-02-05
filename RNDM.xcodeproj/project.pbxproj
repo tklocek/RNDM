@@ -17,6 +17,8 @@
 		70B3DD1623DF87BA008A6EEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B3DD1423DF87BA008A6EEA /* LaunchScreen.storyboard */; };
 		70B3DD1E23DF8852008A6EEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70B3DD1D23DF8852008A6EEA /* GoogleService-Info.plist */; };
 		70E0E45923EA0EBD000108A2 /* ThoughtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E0E45823EA0EBD000108A2 /* ThoughtCell.swift */; };
+		70E0E45B23EB5B1B000108A2 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E0E45A23EB5B1B000108A2 /* LoginVC.swift */; };
+		70E0E45D23EB5E1E000108A2 /* CreateUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E0E45C23EB5E1E000108A2 /* CreateUserVC.swift */; };
 		70EBD58223E571550098292A /* AddToughtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EBD58123E571550098292A /* AddToughtVC.swift */; };
 		DDA420AB06F62FD035364162 /* Pods_RNDM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52427F83C9F02D47D19BF802 /* Pods_RNDM.framework */; };
 /* End PBXBuildFile section */
@@ -37,6 +39,8 @@
 		70B3DD1723DF87BA008A6EEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70B3DD1D23DF8852008A6EEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		70E0E45823EA0EBD000108A2 /* ThoughtCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtCell.swift; sourceTree = "<group>"; };
+		70E0E45A23EB5B1B000108A2 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		70E0E45C23EB5E1E000108A2 /* CreateUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserVC.swift; sourceTree = "<group>"; };
 		70EBD58123E571550098292A /* AddToughtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToughtVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +122,8 @@
 			children = (
 				70B3DD0D23DF87B7008A6EEA /* MainVC.swift */,
 				70EBD58123E571550098292A /* AddToughtVC.swift */,
+				70E0E45A23EB5B1B000108A2 /* LoginVC.swift */,
+				70E0E45C23EB5E1E000108A2 /* CreateUserVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -256,9 +262,11 @@
 			files = (
 				7090151123E83BF40079E719 /* Constants.swift in Sources */,
 				70B3DD0E23DF87B7008A6EEA /* MainVC.swift in Sources */,
+				70E0E45B23EB5B1B000108A2 /* LoginVC.swift in Sources */,
 				70EBD58223E571550098292A /* AddToughtVC.swift in Sources */,
 				7090151323E86F250079E719 /* Thought.swift in Sources */,
 				70B3DD0A23DF87B7008A6EEA /* AppDelegate.swift in Sources */,
+				70E0E45D23EB5E1E000108A2 /* CreateUserVC.swift in Sources */,
 				70E0E45923EA0EBD000108A2 /* ThoughtCell.swift in Sources */,
 				70B3DD0C23DF87B7008A6EEA /* SceneDelegate.swift in Sources */,
 			);
