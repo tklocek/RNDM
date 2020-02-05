@@ -30,6 +30,7 @@
                                 <color key="tintColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.047058823530000002" alpha="0.80375744049999998" colorSpace="calibratedRGB"/>
                                 <color key="selectedSegmentTintColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.047058823530000002" alpha="0.80375744049999998" colorSpace="calibratedRGB"/>
                                 <connections>
+                                    <action selector="categoryChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="UOz-cO-rJC"/>
                                     <action selector="categoryChanged:" destination="IBh-8c-QVH" eventType="valueChanged" id="ZC7-pC-9o4"/>
                                 </connections>
                             </segmentedControl>
