@@ -24,11 +24,48 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet private weak var segmentControl: UISegmentedControl!
     @IBOutlet private weak var tableView: UITableView!
 
+    
     //Variables
     private var thoughts = [Thought]()
     private var thoughtsCollectionRef: CollectionReference!
     private var thoughtsListener: ListenerRegistration!
     private var selectedCategory = ThoughtCategory.funny.rawValue
+    private var handle: AuthStateDidChangeListenerHandle?
+    
+    
+    @IBAction func logoutTapped(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signoutError as NSError {
+            debugPrint("Error signing out: \(signoutError)")
+        }
+    }
+    
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if thoughtsListener != nil {
+            thoughtsListener.remove()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
+            if user == nil {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let loginVC = storyboard.instantiateViewController(withIdentifier: "loginVC")
+                self.present(loginVC, animated: true, completion: nil)
+            } else {
+                self.setListener()
+            }
+            
+            
+        })
+        
+        
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return thoughts.count
@@ -75,11 +112,6 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         thoughtsCollectionRef = Firestore.firestore().collection(THOUGHTS_REF)
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-                
-        setListener()
-    }
     
     func setListener() {
         if selectedCategory == ThoughtCategory.popular.rawValue {
@@ -113,9 +145,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        thoughtsListener.remove()
-    }
+
     
 }
 
