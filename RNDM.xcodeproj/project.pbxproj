@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		708081BC23F09D5A00166838 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708081BB23F09D5A00166838 /* CommentCell.swift */; };
 		7090151123E83BF40079E719 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090151023E83BF40079E719 /* Constants.swift */; };
 		7090151323E86F250079E719 /* Thought.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7090151223E86F250079E719 /* Thought.swift */; };
+		709017D923EE91FD0061A9AF /* CommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709017D823EE91FD0061A9AF /* CommentsVC.swift */; };
 		70B3DD0A23DF87B7008A6EEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B3DD0923DF87B7008A6EEA /* AppDelegate.swift */; };
 		70B3DD0C23DF87B7008A6EEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B3DD0B23DF87B7008A6EEA /* SceneDelegate.swift */; };
 		70B3DD0E23DF87B7008A6EEA /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B3DD0D23DF87B7008A6EEA /* MainVC.swift */; };
@@ -27,8 +29,10 @@
 		23F9DD6E9F234195151AB584 /* Pods-RNDM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDM.release.xcconfig"; path = "Target Support Files/Pods-RNDM/Pods-RNDM.release.xcconfig"; sourceTree = "<group>"; };
 		52427F83C9F02D47D19BF802 /* Pods_RNDM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNDM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		561523551E942788DEFB6B18 /* Pods-RNDM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNDM.debug.xcconfig"; path = "Target Support Files/Pods-RNDM/Pods-RNDM.debug.xcconfig"; sourceTree = "<group>"; };
+		708081BB23F09D5A00166838 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		7090151023E83BF40079E719 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7090151223E86F250079E719 /* Thought.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thought.swift; sourceTree = "<group>"; };
+		709017D823EE91FD0061A9AF /* CommentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsVC.swift; sourceTree = "<group>"; };
 		70B3DD0623DF87B7008A6EEA /* RNDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B3DD0923DF87B7008A6EEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70B3DD0B23DF87B7008A6EEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				70E0E45823EA0EBD000108A2 /* ThoughtCell.swift */,
+				708081BB23F09D5A00166838 /* CommentCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 				70EBD58123E571550098292A /* AddToughtVC.swift */,
 				70E0E45A23EB5B1B000108A2 /* LoginVC.swift */,
 				70E0E45C23EB5E1E000108A2 /* CreateUserVC.swift */,
+				709017D823EE91FD0061A9AF /* CommentsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -263,7 +269,9 @@
 				7090151123E83BF40079E719 /* Constants.swift in Sources */,
 				70B3DD0E23DF87B7008A6EEA /* MainVC.swift in Sources */,
 				70E0E45B23EB5B1B000108A2 /* LoginVC.swift in Sources */,
+				708081BC23F09D5A00166838 /* CommentCell.swift in Sources */,
 				70EBD58223E571550098292A /* AddToughtVC.swift in Sources */,
+				709017D923EE91FD0061A9AF /* CommentsVC.swift in Sources */,
 				7090151323E86F250079E719 /* Thought.swift in Sources */,
 				70B3DD0A23DF87B7008A6EEA /* AppDelegate.swift in Sources */,
 				70E0E45D23EB5E1E000108A2 /* CreateUserVC.swift in Sources */,
