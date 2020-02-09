@@ -12,18 +12,24 @@ class CommentCell: UITableViewCell {
 
     //Outlets
     @IBOutlet weak var usernameLbl: UILabel!
-    @IBOutlet weak var timestampLbl: NSLayoutConstraint!
     @IBOutlet weak var commentLbl: UILabel!
+    @IBOutlet weak var timestampLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    func configureCell(comment: Comment) {
+        usernameLbl.text = comment.username
+        commentLbl.text = comment.commentTxt
+        
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, HH:mm"
+        let timestamp = formatter.string(from: comment.timestamp)
+        timestampLbl.text = timestamp
+     }
+    
+    
 }
