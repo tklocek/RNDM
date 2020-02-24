@@ -59,30 +59,10 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             } else {
                 self.setListener()
             }
-            
-            
         })
-        
-        
     }
     
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return thoughts.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "thoughtCell", for: indexPath) as? ThoughtCell {
-            
-            cell.configureCell(thought: thoughts[indexPath.row])
-            return cell
-        } else {
-            return UITableViewCell()
-        }
-
-    }
-
     @IBAction func categoryChanged(_ sender: Any) {
         switch segmentControl.selectedSegmentIndex {
         case 0:
@@ -99,8 +79,6 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         setListener()
         
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -143,6 +121,23 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
         }
         
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return thoughts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "thoughtCell", for: indexPath) as? ThoughtCell {
+            
+            cell.configureCell(thought: thoughts[indexPath.row])
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
