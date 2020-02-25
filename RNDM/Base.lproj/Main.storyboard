@@ -94,14 +94,19 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="optionsImageDark" translatesAutoresizingMaskIntoConstraints="NO" id="uch-fs-9jy">
+                                                    <rect key="frame" x="331" y="8" width="30" height="30"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ggh-3N-kDU" firstAttribute="leading" secondItem="Mlw-ZC-Xkl" secondAttribute="leadingMargin" id="EL2-yk-1bv"/>
                                                 <constraint firstItem="2si-D1-aUz" firstAttribute="centerY" secondItem="ggh-3N-kDU" secondAttribute="centerY" id="F3J-R3-MZi"/>
                                                 <constraint firstItem="QD2-Ga-nVI" firstAttribute="top" secondItem="ggh-3N-kDU" secondAttribute="bottom" constant="8" id="a2e-mu-tdC"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="MeI-gA-csM" secondAttribute="bottom" constant="1" id="aFw-F7-eLM"/>
+                                                <constraint firstItem="uch-fs-9jy" firstAttribute="centerY" secondItem="2si-D1-aUz" secondAttribute="centerY" id="imE-KL-6xw"/>
                                                 <constraint firstItem="MeI-gA-csM" firstAttribute="leading" secondItem="Mlw-ZC-Xkl" secondAttribute="leading" constant="20" symbolic="YES" id="m37-hp-kLk"/>
                                                 <constraint firstItem="QD2-Ga-nVI" firstAttribute="leading" secondItem="Mlw-ZC-Xkl" secondAttribute="leadingMargin" id="pAy-pV-LBr"/>
+                                                <constraint firstAttribute="trailing" secondItem="uch-fs-9jy" secondAttribute="trailing" constant="14" id="qbN-iO-uWg"/>
                                                 <constraint firstItem="MeI-gA-csM" firstAttribute="top" secondItem="QD2-Ga-nVI" secondAttribute="bottom" constant="4" id="rpK-YW-tnn"/>
                                                 <constraint firstItem="ggh-3N-kDU" firstAttribute="top" secondItem="Mlw-ZC-Xkl" secondAttribute="topMargin" id="tNy-A8-je3"/>
                                                 <constraint firstItem="2si-D1-aUz" firstAttribute="leading" secondItem="ggh-3N-kDU" secondAttribute="trailing" constant="8" id="tah-kM-65K"/>
@@ -112,6 +117,7 @@
                                             <outlet property="commentsNumLbl" destination="dvr-Gb-bFE" id="UNT-cl-xsp"/>
                                             <outlet property="likesImg" destination="91a-bJ-0aT" id="eiL-vW-3dH"/>
                                             <outlet property="likesNumLbl" destination="q77-eb-ld8" id="wYW-mh-DVW"/>
+                                            <outlet property="optionsMenu" destination="uch-fs-9jy" id="AGZ-jf-1jy"/>
                                             <outlet property="thoughtTxtLbl" destination="QD2-Ga-nVI" id="k68-zQ-AAM"/>
                                             <outlet property="timestampLbl" destination="2si-D1-aUz" id="2oQ-yi-Dxr"/>
                                             <outlet property="usernameLbl" destination="ggh-3N-kDU" id="wsP-sS-jr0"/>
@@ -307,8 +313,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="optionsImageDark" translatesAutoresizingMaskIntoConstraints="NO" id="H1z-rL-DaY">
+                                                    <rect key="frame" x="330" y="11" width="30" height="30"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="H1z-rL-DaY" firstAttribute="centerY" secondItem="Ejx-pE-IPF" secondAttribute="centerY" id="24n-dQ-ekp"/>
+                                                <constraint firstAttribute="trailing" secondItem="H1z-rL-DaY" secondAttribute="trailing" constant="15" id="4gS-tJ-iH5"/>
                                                 <constraint firstItem="jLG-t3-jLV" firstAttribute="leading" secondItem="4Er-hz-YHg" secondAttribute="leadingMargin" id="8ep-p3-swc"/>
                                                 <constraint firstItem="Ejx-pE-IPF" firstAttribute="centerY" secondItem="kow-Ac-6GZ" secondAttribute="centerY" id="BG1-pO-xeO"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="jLG-t3-jLV" secondAttribute="bottom" constant="5" id="D7A-MK-I88"/>
@@ -321,6 +332,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="commentLbl" destination="jLG-t3-jLV" id="0j9-0p-Yvc"/>
+                                            <outlet property="optionsMenu" destination="H1z-rL-DaY" id="uw2-4f-Pgd"/>
                                             <outlet property="timestampLbl" destination="Ejx-pE-IPF" id="lZk-M4-ZjV"/>
                                             <outlet property="usernameLbl" destination="kow-Ac-6GZ" id="kdI-k4-ywg"/>
                                         </connections>
@@ -571,6 +583,7 @@
     <resources>
         <image name="addThoughtIcon" width="21" height="24"/>
         <image name="commentIcon" width="26" height="22"/>
+        <image name="optionsImageDark" width="30" height="30"/>
         <image name="starIconFilled" width="20" height="19"/>
     </resources>
 </document>

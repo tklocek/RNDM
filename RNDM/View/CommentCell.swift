@@ -14,6 +14,7 @@ class CommentCell: UITableViewCell {
     @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var commentLbl: UILabel!
     @IBOutlet weak var timestampLbl: UILabel!
+    @IBOutlet weak var optionsMenu: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
