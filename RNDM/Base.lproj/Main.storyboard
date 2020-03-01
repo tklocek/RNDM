@@ -307,7 +307,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This is a custom comment..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLG-t3-jLV">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This is a custom comment..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jLG-t3-jLV">
                                                     <rect key="frame" x="15" y="45" width="352" height="19"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                     <nil key="textColor"/>
@@ -357,11 +357,66 @@
                         <outlet property="addCommentTxt" destination="VuW-ck-4qG" id="A3v-mb-gA4"/>
                         <outlet property="keyboardView" destination="ZlX-xd-Jr6" id="b8v-1v-hkA"/>
                         <outlet property="tableView" destination="Sgk-y1-mwT" id="frz-aN-EGz"/>
+                        <segue destination="MtU-MQ-vQG" kind="show" identifier="toEditComment" id="8Yi-aU-uyW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YwF-lZ-05a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1880.8" y="386.35682158920542"/>
+        </scene>
+        <!--Update CommentVC-->
+        <scene sceneID="0Ff-pr-WeM">
+            <objects>
+                <viewController id="MtU-MQ-vQG" customClass="UpdateCommentVC" customModule="RNDM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jZ0-g9-qB3" customClass="Update">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xQX-Eu-VuB">
+                                <rect key="frame" x="20" y="64" width="335" height="150"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="ggV-ub-GT5"/>
+                                </constraints>
+                                <color key="textColor" red="0.10980392160000001" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JM2-Q3-vok">
+                                <rect key="frame" x="125" y="230" width="125" height="40"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="axu-eo-g3B"/>
+                                    <constraint firstAttribute="height" constant="40" id="mv6-3n-bG8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Update">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateTapped:" destination="MtU-MQ-vQG" eventType="touchUpInside" id="T3v-vh-lds"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="JM2-Q3-vok" firstAttribute="centerX" secondItem="jZ0-g9-qB3" secondAttribute="centerX" id="07C-Ns-FJg"/>
+                            <constraint firstItem="JM2-Q3-vok" firstAttribute="top" secondItem="xQX-Eu-VuB" secondAttribute="bottom" constant="16" id="6WW-5g-5zK"/>
+                            <constraint firstItem="5x9-vZ-Vao" firstAttribute="trailing" secondItem="xQX-Eu-VuB" secondAttribute="trailing" constant="20" id="EKM-Kw-UJz"/>
+                            <constraint firstItem="xQX-Eu-VuB" firstAttribute="leading" secondItem="5x9-vZ-Vao" secondAttribute="leading" constant="20" id="cSy-Gf-xPa"/>
+                            <constraint firstItem="xQX-Eu-VuB" firstAttribute="top" secondItem="5x9-vZ-Vao" secondAttribute="top" constant="20" id="ipX-M8-iiu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5x9-vZ-Vao"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="poY-5y-WWW"/>
+                    <connections>
+                        <outlet property="commentTxt" destination="xQX-Eu-VuB" id="CtR-AF-YwR"/>
+                        <outlet property="updateButton" destination="JM2-Q3-vok" id="cvc-yd-IMX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="73j-dE-efL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2648.8000000000002" y="386.35682158920542"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="nMB-cG-pIM">

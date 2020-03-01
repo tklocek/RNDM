@@ -52,12 +52,16 @@ class CommentsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         let alert = UIAlertController(title: "Edit Comment", message: "You can delete or edit your comment", preferredStyle: .actionSheet)
         let deleteAction = UIAlertAction(title: "Delete Comment", style: .default) { (action) in
             //delete the comment - if we don't need to update any field.
-//            self.firestore.collection(THOUGHTS_REF).document(self.thought.documentId).collection(COMMENTS_REF).document(comment.documentId).delete { (error) in
-//                if let error = error {
-//                    debugPrint("Unable to delete comment: \(error.localizedDescription)")
-//                } else {
-//                    alert.dismiss(animated: true, completion: nil)
-//               }
+//            self.firestore.collection(THOUGHTS_REF)
+//                .document(self.thought.documentId)
+//                .collection(COMMENTS_REF)
+//                .document(comment.documentId)
+//                .delete { (error) in
+//                    if let error = error {
+//                        debugPrint("Unable to delete comment: \(error.localizedDescription)")
+//                    } else {
+//                        alert.dismiss(animated: true, completion: nil)
+//                   }
 //            }
             
             
@@ -94,6 +98,8 @@ class CommentsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         
         let editAction = UIAlertAction(title: "Edit Comment", style: .default) { (action) in
             //Edit the comment
+            self.performSegue(withIdentifier: "toEditComment", sender: (comment, self.thought))
+            alert.dismiss(animated: true, completion: nil)
             
         }
         
@@ -105,6 +111,16 @@ class CommentsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         present(alert, animated: true, completion: nil)
         
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? UpdateCommentVC {
+            if let commentData = sender as? (comment: Comment, thought: Thought) {
+                destination.commentData = commentData
+            }
+            
+            
+        }
     }
     
     override func viewDidLoad() {
