@@ -12,14 +12,7 @@ import Firebase
 
 class CommentsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CommentDelegate {
     
-    func commentOptionsTapped(comment: Comment) {
-        //Adding allert
-        print(comment.username)
-    }
-    
-
     //Outlets
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addCommentTxt: UITextField!
     @IBOutlet weak var keyboardView: UIView!
@@ -52,6 +45,66 @@ class CommentsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     
     override func viewDidDisappear(_ animated: Bool) {
         commentListener.remove()
+    }
+    
+    func commentOptionsTapped(comment: Comment) {
+        //Adding allert
+        let alert = UIAlertController(title: "Edit Comment", message: "You can delete or edit your comment", preferredStyle: .actionSheet)
+        let deleteAction = UIAlertAction(title: "Delete Comment", style: .default) { (action) in
+            //delete the comment - if we don't need to update any field.
+//            self.firestore.collection(THOUGHTS_REF).document(self.thought.documentId).collection(COMMENTS_REF).document(comment.documentId).delete { (error) in
+//                if let error = error {
+//                    debugPrint("Unable to delete comment: \(error.localizedDescription)")
+//                } else {
+//                    alert.dismiss(animated: true, completion: nil)
+//               }
+//            }
+            
+            
+                self.firestore.runTransaction({ (transaction, errorPointer) -> Any? in
+                
+                let thoughtDocument: DocumentSnapshot
+                
+                do {
+                    try thoughtDocument = transaction.getDocument(Firestore.firestore().collection(THOUGHTS_REF).document(self.thought.documentId))
+                } catch let error as NSError {
+                    debugPrint("Fetch error: \(error.localizedDescription)")
+                    return nil
+                }
+                
+                guard let oldNumComments = thoughtDocument.data()?[NUM_COMMENTS] as? Int else { return nil }
+                
+                transaction.updateData([NUM_COMMENTS : oldNumComments - 1], forDocument: self.thoughtRef)
+                let commentRef = self.firestore.collection(THOUGHTS_REF).document(self.thought.documentId).collection(COMMENTS_REF).document(comment.documentId)
+                transaction.deleteDocument(commentRef)
+                
+                
+                return nil
+            }) { (object, error) in
+                if let error = error {
+                    debugPrint("Transaction failed: \(error)")
+                } else {
+                    alert.dismiss(animated: true, completion: nil)
+                }
+                
+            }
+            
+            
+        }
+        
+        let editAction = UIAlertAction(title: "Edit Comment", style: .default) { (action) in
+            //Edit the comment
+            
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(deleteAction)
+        alert.addAction(editAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+        
+        
     }
     
     override func viewDidLoad() {

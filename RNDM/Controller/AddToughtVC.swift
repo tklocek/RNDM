@@ -33,6 +33,14 @@ class AddToughtVC: UIViewController, UITextViewDelegate  {
         thoughtTxt.textColor = UIColor.lightGray
         thoughtTxt.delegate = self
         
+        if Auth.auth().currentUser != nil {
+            userNameTxt.text = Auth.auth().currentUser?.displayName
+            userNameTxt.isUserInteractionEnabled = false
+        } else {
+            userNameTxt.isUserInteractionEnabled = true
+            userNameTxt.text = ""
+        }
+        
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -58,7 +66,7 @@ class AddToughtVC: UIViewController, UITextViewDelegate  {
         
         guard let username = userNameTxt.text else { return }
         
-        Firestore.firestore().collection("thoughts").addDocument(data: [
+        Firestore.firestore().collection(THOUGHTS_REF).addDocument(data: [
             CATEGORY : selectedCategory,
             NUM_COMMENTS : 0,
             NUM_LIKES : 0,
