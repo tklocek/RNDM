@@ -354,6 +354,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="dvv-S1-6dQ"/>
                     <connections>
+                        <outlet property="addCommentBtn" destination="Jdb-si-rUt" id="3HG-NZ-shD"/>
                         <outlet property="addCommentTxt" destination="VuW-ck-4qG" id="A3v-mb-gA4"/>
                         <outlet property="keyboardView" destination="ZlX-xd-Jr6" id="b8v-1v-hkA"/>
                         <outlet property="tableView" destination="Sgk-y1-mwT" id="frz-aN-EGz"/>

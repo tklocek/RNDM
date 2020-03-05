@@ -16,6 +16,7 @@ class CommentsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addCommentTxt: UITextField!
     @IBOutlet weak var keyboardView: UIView!
+    @IBOutlet weak var addCommentBtn: UIButton!
     
     //Variables
     var thought: Thought!
@@ -24,6 +25,7 @@ class CommentsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
     let firestore = Firestore.firestore()
     var username: String!
     var commentListener : ListenerRegistration!
+    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -129,14 +131,27 @@ class CommentsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        addCommentBtn.isEnabled = false
+        
         thoughtRef = firestore.collection(THOUGHTS_REF).document(thought.documentId)
         if let name = Auth.auth().currentUser?.displayName {
              username = name
         }
         
+        addCommentTxt.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        
         self.view.bindToKeyboard()
         
     }
+    
+    @objc func textFieldDidChange() {
+        if addCommentTxt.text != "" {
+            addCommentBtn.isEnabled = true
+        } else {
+            addCommentBtn.isEnabled = false
+        }
+    }
+    
     
     @IBAction func addCommentTapped(_ sender: Any) {
         guard let commentTxt = addCommentTxt.text else { return }
@@ -192,7 +207,6 @@ class CommentsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, 
         
         return UITableViewCell()
     }
-    
     
     
 }
