@@ -70,7 +70,15 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Thou
             }
         }
         
+        let editAction = UIAlertAction(title: "Edit Thought", style: .default) { (error) in
+            // Show editThoughtVC(
+            self.performSegue(withIdentifier: "toEditThought", sender: thought)
+            alert.dismiss(animated: true, completion: nil)
+            
+        }
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(editAction)
         alert.addAction(deleteAction)
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
@@ -202,6 +210,7 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Thou
         performSegue(withIdentifier: "toComments", sender: thoughts[indexPath.row])
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toComments" {
             if let destinationVC = segue.destination as? CommentsVC {
@@ -210,6 +219,18 @@ class MainVC: UIViewController, UITableViewDataSource, UITableViewDelegate, Thou
                 }
             }
         }
+        
+        if segue.identifier == "toEditThought" {
+            if let destination = segue.destination as? EditThoughtVC {
+                if let thought = sender as? Thought {
+                    destination.thought = thought
+                }
+            }
+        }
+        
+        
+        
+        
     }
     
 }

@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 
-class AddToughtVC: UIViewController, UITextViewDelegate  {
+class AddThoughtVC: UIViewController, UITextViewDelegate  {
 
     //Outlets
     @IBOutlet private weak var categorySegment: UISegmentedControl!
